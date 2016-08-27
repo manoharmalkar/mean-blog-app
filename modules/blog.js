@@ -10,6 +10,14 @@ exports.getBloglist = function(callback){
     });
 }
 
+exports.getBlogDetails = function(req, callback){
+    blogsCollection.find({_id:req.body.id},{}, function(err, results){
+        if(err)
+            console.log('error'+err);
+        callback(err, results);
+    });
+}
+
 exports.createBlog = function(callback){
     var newblog = {name: 'Chris', content: 'sevilayha', tags: 'password',url:'sjfdsmbm'};
     blogsCollection.insert(newblog, {w:1}, function(err, result) {

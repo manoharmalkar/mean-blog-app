@@ -1,0 +1,40 @@
+<div class="container" ng-controller="HomeController">
+    <div class="row">
+        <div class="col-md-8"><h1><a ui-sref="blogs">Simple MEAN Blog Application</a></h1></div>
+        <div class="col-md-4 vcenter">
+            <button type="button" class="btn btn-primary" ng-click="editBlog()">Add New</button>                
+        </div>
+    </div>
+    <div>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-md-1 text-center">Index</th>
+                        <th class="col-md-5 text-center">Title</th>
+                        <th class="col-md-4 text-center">Auther</th>
+                        <th class="col-md-2 text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-md-1 text-center"></td>
+                        <td class="col-md-6 text-center"><input type="text" placeholder="search" class="col-md-12"></td>
+                        <td class="col-md-2 text-center"><input type="text" placeholder="search" ></td>
+                        <td class="col-md-3 text-center"></td>
+                    </tr>
+                    <tr ng-repeat="blog in blogs track by $index">
+                        <td class="col-md-1 text-center">{{$index+1}}</td>
+                        <td class="col-md-5">{{blog.title}}</td>
+                        <td class="col-md-4 text-center">{{blog.auther}}</td>
+                        <td class="col-md-2 text-center">
+                            <button type="button" class="btn btn-primary btn-xs" ng-click="editBlog(blog._id)">EDIT</button>
+                            <button type="button" class="btn btn-danger btn-xs" ng-click="deleteBlog(blog._id)">DELETE</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
