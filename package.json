@@ -1,0 +1,11 @@
+{
+  "name": "blog",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.6.1",
+    "mongoose": "^4.5.10",
+    "monk": "^3.1.2",
+    "nodemon": "^1.10.2"
+  }
+}
