@@ -19,17 +19,17 @@
                 <tbody>
                     <tr>
                         <td class="col-md-1 text-center"></td>
-                        <td class="col-md-6 text-center"><input type="text" placeholder="search" class="col-md-12"></td>
-                        <td class="col-md-2 text-center"><input type="text" placeholder="search" ></td>
+                        <td class="col-md-6 text-center"><input type="text" placeholder="search" class="col-md-12" ng-model="search" ng-change="searchTitle()"></td>
+                        <td class="col-md-2 text-center"></td>
                         <td class="col-md-3 text-center"></td>
                     </tr>
                     <tr ng-repeat="blog in blogs track by $index">
                         <td class="col-md-1 text-center">{{$index+1}}</td>
-                        <td class="col-md-5">{{blog.title}}</td>
-                        <td class="col-md-4 text-center">{{blog.auther}}</td>
+                        <td class="col-md-5"><a href="{{blog.url}}" target="_blank">{{blog.title}}</a></td>
+                        <td class="col-md-4 text-center">{{blog.author}}</td>
                         <td class="col-md-2 text-center">
                             <button type="button" class="btn btn-primary btn-xs" ng-click="editBlog(blog._id)">EDIT</button>
-                            <button type="button" class="btn btn-danger btn-xs" ng-click="deleteBlog(blog._id)">DELETE</button>
+                            <button type="button" class="btn btn-danger btn-xs" ng-click="deleteBlog(blog._id, $index)">DELETE</button>
                         </td>
                     </tr>
                 </tbody>
